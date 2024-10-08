@@ -1,1 +1,158 @@
+TABUADA
+def gerar_tabuada(numero):
+    print(f'Tabuada de {numero}:')
+    for i in range(1, 11):
+        print(f'{numero} X {i} = {numero * i}')
+        numero = int(input('Informe um número entre 1 e 10 para ver a tabuada: '))
+        if 1 <= numero <= 10:
+    gerar_tabuada(numero)
+else:
+    print('Número fora do intervalo permitido. Por favor, informe um número entre 1 e 10.')
 
+
+CONTAGEM DE NUMEROS PARES E IMPARES
+
+contagem_pares = 0
+contagem_impares = 0
+for i in range(10):
+    numero = int(input("Digite um número inteiro: "))
+    if numero % 2 == 0:
+        contagem_pares += 1
+    else:
+        contagem_impares += 1
+        print(f"Quantidade de números pares: {contagem_pares}")
+print(f"Quantidade de números ímpares: {contagem_impares}")
+
+
+VERIFICAÇãO DE NUMERO PRIMO
+
+
+def eh_primo(numero):
+    if numero < 2:
+        return False
+    for i in range(2, int(numero ** 0.5) + 1):
+        if numero % i == 0:
+            return False
+    return True
+numero = int(input("Digite um número inteiro: "))
+if eh_primo(numero):
+    print(f"O número {numero} é primo.")
+else:
+    print(f"O número {numero} não é primo.")
+
+
+
+POPULACAO PAIS A PARA PAIS B
+
+
+populacao_A = 80000
+populacao_B = 200000
+taxa_crescimento_A = 0.03
+taxa_crescimento_B = 0.015
+
+anos = 0
+while populacao_A < populacao_B:
+    populacao_A += populacao_A * taxa_crescimento_A
+    populacao_B += populacao_B * taxa_crescimento_B
+    anos += 1
+
+print(f"Serão necessários {anos} anos para que a população do país A ultrapasse ou iguale a população do país B.")
+
+
+
+
+TABELA DE PRECOS
+
+
+def gerar_tabela_de_precos():
+    print("Lojas Quase Dois - Tabela de preços")
+    for quantidade in range(1, 51):
+        preco = quantidade * 1.99
+        print(f"{quantidade} - R$ {preco:.2f}"
+if __name__ == "__main__":
+    gerar_tabela_de_precos()
+    quantidade = int(input("Digite a quantidade de itens que o cliente está comprando (1 a 50): "))
+    if 1 <= quantidade <= 50:
+        print(f"Valor total: R$ {quantidade * 1.99:.2f}")
+    else:
+        print("Quantidade fora do intervalo permitido. Por favor, insira um número entre 1 e 50.")
+
+
+
+SALARIO EM 2025
+
+
+salario = 1000.00
+ano = 1996
+aumento = 0.015
+salario += salario * aumento
+for ano in range(1997, 2026):
+    aumento *= 2
+    salario += salario * aumento
+
+print(f"Salário em 2025: R$ {salario:.2f}")
+
+
+TABELA DE JUROS
+
+
+def calcular_tabela_divida(valor_divida)
+tabela_juros = {
+        1: 0,
+        3: 0.10,
+        6: 0.15,
+        9: 0.20,
+        12: 0.25
+    }
+print(f"{'Dívida':<10} {'Juros':<10} {'Quantidade de Parcelas':<25} {'Valor da Parcela':<20}")
+for parcelas, juros in tabela_juros.items():
+        valor_juros = valor_divida * juros
+        valor_total = valor_divida + valor_juros
+        valor_parcela = valor_total / parcelas
+        print(f"R$ {valor_total:<10.2f} R$ {valor_juros:<10.2f} {parcelas:<25} R$ {valor_parcela:<20.2f}")
+valor_divida = float(input("Digite o valor da dívida: R$ "))
+calcular_tabela_divida(valor_divida)
+
+
+NOTAS ESCOLARES
+
+gabarito = ['A', 'B', 'C', 'D', 'E', 'E', 'D', 'C', 'B', 'A']
+
+notas = []
+total_alunos = 0
+
+def calcular_nota(respostas):
+    acertos = 0
+    for i in range(len(gabarito)):
+        if respostas[i] == gabarito[i]:
+            acertos += 1
+    return acertos
+
+while True:
+
+    respostas_aluno = []
+    print("Digite as respostas do aluno (A, B, C, D, E):")
+    for i in range(10):
+        resposta = input(f"Questão {i + 1}: ").strip().upper()
+        while resposta not in ['A', 'B', 'C', 'D', 'E']:
+            print("Resposta inválida! Por favor, insira A, B, C, D ou E.")
+            resposta = input(f"Questão {i + 1}: ").strip().upper()
+        respostas_aluno.append(resposta)
+    
+    nota = calcular_nota(respostas_aluno)
+    notas.append(nota)
+    total_alunos += 1
+    
+    outro_aluno = input("Outro aluno vai utilizar o sistema? (S/N): ").strip().upper()
+    if outro_aluno != 'S':
+        break
+
+maior_nota = max(notas)
+menor_nota = min(notas)
+media_turma = sum(notas) / total_alunos
+
+print("\nResultado Final:")
+print(f"Maior Acerto: {maior_nota}")
+print(f"Menor Acerto: {menor_nota}")
+print(f"Total de Alunos: {total_alunos}")
+print(f"Média da Turma: {media_turma:.2f}"
